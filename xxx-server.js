@@ -100,7 +100,7 @@ app.get('/comics', async (req, res) => {
                 "comics": [
                     {
                         "comicId": 1,
-                        "comicName": "111"
+                        "comicName": "六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一六五四三二一"
                     },
                     {
                         "comicId": 2,
@@ -176,7 +176,7 @@ app.get('/comics/:id', async (req, res) => {
             })
         } else if (comicId == 3) {
             res.json({
-                "totalCount": 4,
+                "totalCount": 5,
                 "comics": [
                     {
                         "comicId": 3,
