@@ -129,20 +129,80 @@ app.get('/comics', async (req, res) => {
 });
 
 // 獲取單本漫畫內容的 API
-app.get('/comics/:id/cover', async (req, res) => {
+app.get('/comics/:id', async (req, res) => {
     try {
         const comicId = req.params.id;
 
         console.log("comics with id!!! : ", comicId)
+        if (comicId == 1) {
+            res.json({
+                "totalCount": 3,
+                "comics": [
+                    {
+                        "comicId": 1,
+                        "comicPage": 1
+                    },
+                    {
+                        "comicId": 1,
+                        "comicPage": 2
+                    },
+                    {
+                        "comicId": 1,
+                        "comicPage": 3
+                    }
+                ]
+            })
+        } else if (comicId == 2) {
+            res.json({
+                "totalCount": 4,
+                "comics": [
+                    {
+                        "comicId": 2,
+                        "comicPage": 1
+                    },
+                    {
+                        "comicId": 2,
+                        "comicPage": 2
+                    },
+                    {
+                        "comicId": 2,
+                        "comicPage": 3
+                    },
+                    {
+                        "comicId": 2,
+                        "comicPage": 4
+                    }
+                ]
+            })
+        } else if (comicId == 3) {
+            res.json({
+                "totalCount": 4,
+                "comics": [
+                    {
+                        "comicId": 3,
+                        "comicPage": 1
+                    },
+                    {
+                        "comicId": 3,
+                        "comicPage": 2
+                    },
+                    {
+                        "comicId": 3,
+                        "comicPage": 3
+                    },
+                    {
+                        "comicId": 3,
+                        "comicPage": 4
+                    },
+                    {
+                        "comicId": 3,
+                        "comicPage": 5
+                    }
 
-        const coverPath = path.join(__dirname, 'comics', comicId, 'cover.png'); // 假設封面圖檔是 cover.jpg
-        console.log("coverPath:", coverPath)
-        if (fs.existsSync(coverPath)) {
-            console.log("exists")
-            res.sendFile(coverPath); // 傳送封面圖檔
-        } else {
-            res.status(404).send('Cover image not found');
+                ]
+            })
         }
+
     } catch (err) {
         // res.status(500).send({ message: err.message });
         console.error(err)
